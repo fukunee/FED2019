@@ -26,8 +26,8 @@
  - null与undefined
  - 引用类型值
     	- 对象
-    	- 数组
-    	- 函数(apply/call/bind)
+        	- 数组
+            	- 函数(apply/call/bind)
  - 类型转换
  - 变量与作用域
 
@@ -267,6 +267,10 @@
 
 ### 附录1 疑惑点整理
 
-### 附录2 重要参考资料
+### 附录2 算法体会
+
+### 附录3 重要参考资料
  - [前端技术清单](https://alienzhou.github.io/frontend-tech-list/)
  - [前端性能优化之旅](https://alienzhou.github.io/fe-performance-journey/)
+
+### 
