@@ -1,6 +1,7 @@
 # default
 .DS_Store
 node_modules
+package-lock.json
 
 # Build dir
 /dist/web
