@@ -1,0 +1,17 @@
+{
+  "name": "FED2019",
+  "version": "1.0.0",
+  "description": "Front End Docs",
+  "main": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "FrontEnd"
+  ],
+  "author": "fukun",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
