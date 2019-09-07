@@ -1,9 +1,9 @@
-## 第一部分 概论
+## 第一部分 概论   |   Introduction
 
-### 第2章 客户端环境 WEB-Client Environment
+### 第2章 客户端环境   |   Client Environment
 
 - DNS/HTTP/OSI
-- 浏览器运作机制
+- Webkit运行机制 Webkit Mechanism
   - [浏览器的工作原理](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
   - [Chrome浏览器概览](https://developers.google.com/web/updates/2018/09/inside-browser-part1)
   - [浏览时发生了什么？](https://developers.google.com/web/updates/2018/09/inside-browser-part2)
@@ -13,10 +13,12 @@
   - [四个新的观察者：Intersection / Mutation / Resize / Performance (Observer)](https://www.zeolearn.com/magazine/different-types-of-observers-supported-by-modern-browsers)
   - [渲染引擎工作方式及优化建议](https://blog.sessionstack.com/how-javascript-works-the-rendering-engine-and-tips-to-optimize-its-performance-7b95553baeda)
   - [浏览器内核渲染：重建引擎](https://juejin.im/post/5bbaa7da6fb9a05d3761aafe)[跨域解决方案汇总](https://www.jianshu.com/p/438183ddcea8)
-- 不同宿主环境下的JS
-  - [Mixed Environment JavaScript](
+  - [JS 引擎、运行时与调用栈概述](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
+  - [V8 引擎简介](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/types-grammar/apA.md)
 
 ---
+
+
 
 #### DNS/HTTP/OSI
 
@@ -63,8 +65,10 @@
 
 
 ##### OSI
-![ab74f42a536808909fd73fbab8f94049.png](en-resource://database/1078:1)
-![464696ebcde9df1ea3603a4859eb229e.png](en-resource://database/1077:1)
+
+---
+
+
 
 
 #### 浏览器运作机制
@@ -79,6 +83,8 @@ load事件 页面加载完毕
 
 网址被DNS解析为IP地址 -> 通过IP地址建立TCP连接 -> 发送HTTP请求 -> 服务器处理请求并返回响应 ->  浏览器解析渲染页面 -> 断开TCP连接
 
+---
+
 
 
 #### 不同宿主环境下的JS
@@ -87,5 +93,6 @@ load事件 页面加载完毕
 宿主环境主要有两种，客户端浏览器与服务端的NODEJS应用。
 
 **一个重要的概念是，JS不是一个工具或应用，它是一门解释型动态类型语言。**
+
 - **解释型**：相对于编译型，执行前不用先行编译，而是在运行程序的时候才翻译。也称为脚本语言。
 - **动态类型**：相对于静态类型，每一个变量在赋值前都明确其类型，能确保类型安全。动态类型则是在运行时才检验类型合法性。
