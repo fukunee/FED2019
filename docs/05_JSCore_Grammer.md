@@ -1,6 +1,6 @@
-## 第二部分 JS语言核心   |   JS Core
+# 第二部分 JS语言核心  |  JS Core
 
-### 第5章 语法  |    Grammer
+## 第5章 语法  |    Grammer
 
 - 控制语句
   - 条件

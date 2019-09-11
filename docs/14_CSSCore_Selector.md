@@ -1,6 +1,6 @@
-## 第五部分 CSS语言核心  |   CSS Core
+# 第五部分 CSS语言核心  |  CSS Core
 
-### 第14章 选择器  |   Selector
+## 第14章 选择器  |   Selector
  - 四大基本选择器
  - 属性选择器
  - 伪类选择器
@@ -81,13 +81,13 @@ li[class^="a" i] {} /*大小写不敏感*/
 #### 伪类选择器
 
  - 交互伪类
-	 - active
 	 - focus
+	- active LVHA
 	 - hover
 	 - target
-	 - a:any-link
 	 - a:link
 	 - a:visited
+	 - a:any-link
 	 - input:blank
 	 - input:default
 	 - input:enabled

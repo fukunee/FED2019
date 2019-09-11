@@ -1,6 +1,6 @@
-## 第三部分 浏览器运行环境   |   Browser Environment
+# 第三部分 浏览器运行环境  |  Browser Environment
 
-### 第10章    文档对象DOM   |   DOM
+## 第10章    文档对象DOM   |   DOM
 
 - 节点层次
   - Node类型

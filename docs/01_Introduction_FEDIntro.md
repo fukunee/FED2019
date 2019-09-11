@@ -1,13 +1,13 @@
-## 第一部分 概论   |   Introduction
+# 第一部分 概论  |  Introduction
 
-### 第1章 前端概论   |   FED Introduction 
+## 第1章 前端概论   |   FED Introduction 
 
 - 前端简史 History
 - 发展趋势 Trendency
 
 ---
 
-#### 前端简史
+### 前端简史
 ![前端简史](..\static\pic\前端简史.jpg)
 
 <div style="width:fit-content;margin:0 auto;padding:0 0 15px 0;">Pic.前端标准化历程</div>
@@ -31,7 +31,7 @@
 
 
 
-#### 发展趋势
+### 发展趋势
 
 一些比较大方向的趋势：
 

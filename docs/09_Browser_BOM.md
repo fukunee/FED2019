@@ -1,6 +1,6 @@
-## 第三部分 浏览器运行环境   |   Browser Environment
+# 第三部分 浏览器运行环境  |  Browser Environment
 
-### 第9章    浏览器对象BOM   |   BOM
+## 第9章    浏览器对象BOM   |   BOM
 
 - 计时器
 - Window对象

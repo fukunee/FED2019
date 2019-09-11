@@ -1,6 +1,6 @@
-## 第一部分 概论   |   Introduction
+# 第一部分 概论  |  Introduction
 
-### 第2章 客户端环境   |   Client Environment
+## 第2章 客户端环境   |   Client Environment
 
 - DNS/HTTP/OSI
 - Webkit运行机制 Webkit Mechanism
@@ -15,14 +15,15 @@
   - [浏览器内核渲染：重建引擎](https://juejin.im/post/5bbaa7da6fb9a05d3761aafe)[跨域解决方案汇总](https://www.jianshu.com/p/438183ddcea8)
   - [JS 引擎、运行时与调用栈概述](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
   - [V8 引擎简介](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/types-grammar/apA.md)
+  - [回流、重绘及其优化](https://segmentfault.com/a/1190000014474575#articleHeader0)
 
 ---
 
 
 
-#### DNS/HTTP/OSI
+### DNS/HTTP/OSI
 
-##### DNS
+#### DNS
 域名的层级结构：三级域名.次级域名.顶级域名.根域名,即host.sld.tld.root:
  - .root 十三组根域名服务器 A.ROOT-SERVERS.NET~M.ROOT-SERVERS.NET。
  - .tld 十三组顶级域名服务器 A.GTLD-SERVERS.NET~M.GTLD-SERVERS.NET。
@@ -43,11 +44,12 @@
 4. CNAME：规范名称记录(Canonical Name)，返回另一个域名，即当前查询的域名是另一个域名的跳转，详见下文。
 5. PTR：逆向查询记录(Pointer Record)，只用于从IP地址查询域名，详见下文。
 
-##### HTTP
-###### 工作流程
+#### HTTP
+##### 工作流程
 三次握手，四次挥手
 [2](https://www.jianshu.com/p/6bf5e3922887)
-###### 特点
+
+##### 特点
  - 请求和响应
  - 无状态
  - uri定位资源
@@ -55,23 +57,25 @@
  - 持久连接
  - 管线化
 [1](http://www.52im.net/thread-1677-1-1.html)
-###### 请求报文结构
-###### 响应报文结构
-###### 报文头
-###### 状态码
-###### 报文实体
-###### 代理/缓存/网关/隧道/Agent代理
+##### 请求报文结构
+##### 响应报文结构
+##### 报文头
+##### 状态码
+##### 报文实体
+##### 代理/缓存/网关/隧道/Agent代理
 
 
 
-##### OSI
+#### OSI
+
+
 
 ---
 
 
 
 
-#### 浏览器运作机制
+### 浏览器运作机制
 浏览器加载中的事件：
 
 文档状态-document.readyState: loading DOM树在加载中
@@ -87,7 +91,7 @@ load事件 页面加载完毕
 
 
 
-#### 不同宿主环境下的JS
+### 不同宿主环境下的JS
 
 所谓的宿主，是JS运行的一个“**环境**”。
 宿主环境主要有两种，客户端浏览器与服务端的NODEJS应用。
