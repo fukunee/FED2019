@@ -37,7 +37,7 @@ h1#heading {}
 
 ```css
 * {}
-/*通配符选择器的一个妙用是，它可以用来区分以下两种情况：*/
+/*通配符选择器的一个妙用是，它可以用来加强以下两种情况的辨识度：*/
 article:first-child{} /*选取为某元素首个子元素的article标签元素*/
 article :first-child{}/*选取article子元素中的一个*/
 article *:first-child{}/*同上，便于阅读*/
@@ -82,11 +82,11 @@ li[class^="a" i] {} /*大小写不敏感*/
 
  - 交互伪类
 	 - focus
+	- target 
 	- active LVHA
-	 - hover
-	 - target
-	 - a:link
-	 - a:visited
+	 - hover LVHA
+	 - a:link LVHA
+	 - a:visited LVHA
 	 - a:any-link
 	 - input:blank
 	 - input:default

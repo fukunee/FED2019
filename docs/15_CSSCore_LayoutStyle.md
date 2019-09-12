@@ -5,7 +5,7 @@
  - 盒模型
 	 - block、 inline 与 inline-block 
 	- 常规流 Normal Flow
-	- BFC
+	- 块格式化上下文BFC
 	 - float
  - 传统布局法
  - Flex布局
