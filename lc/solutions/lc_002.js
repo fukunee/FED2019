@@ -33,5 +33,3 @@ function singleLinkedAdd(nodeA, nodeB) {
     //返回
     return dummyHead.next;
 }
-
-module.exports = singleLinkedAdd;

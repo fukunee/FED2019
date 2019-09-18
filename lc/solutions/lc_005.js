@@ -1,4 +1,4 @@
-var longestPalindrome = function (str) {
+const longestPalindrome = function (str) {
     if (str.length === 0) {
         return '';
     }
@@ -28,5 +28,3 @@ var longestPalindrome = function (str) {
     }
     return str.split('').slice(m[0], m[1] + 1).join('');
 };
-
-module.exports = longestPalindrome;

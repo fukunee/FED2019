@@ -1,4 +1,4 @@
-let lengthOfLongestSubstring = function (str) {
+const lengthOfLongestSubstring = function (str) {
     let m = 0;
     let _arr = [];
     for (let i = 0; i < str.length; i++) {
@@ -11,5 +11,3 @@ let lengthOfLongestSubstring = function (str) {
     }
     return m;
 };
-
-module.exports = lengthOfLongestSubstring;

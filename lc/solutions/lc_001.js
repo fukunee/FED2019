@@ -8,4 +8,3 @@ function elemAdd(arr, target) {
     }
 }
 
-module.exports = elemAdd;

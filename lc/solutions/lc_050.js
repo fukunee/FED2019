@@ -1,4 +1,4 @@
-var myPow = function (x, n) {
+const myPow = function (x, n) {
     //参数校验
     if (x===0)return false;
     if (n===0)return 1;

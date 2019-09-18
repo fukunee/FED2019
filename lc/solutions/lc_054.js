@@ -1,4 +1,4 @@
-var spiralOrder = function (onion) {
+const spiralOrder = function (onion) {
     let row = onion.length;
     if (row === 0) return [];
     let col = onion[0].length;

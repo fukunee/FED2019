@@ -1,4 +1,4 @@
-let merge = function (intervals) {
+const merge = function (intervals) {
     if (intervals.length === 0) return [];
     intervals.sort((a, b) => a[0] - b[0]);
     let arr = [intervals[0]];

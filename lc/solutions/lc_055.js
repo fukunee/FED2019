@@ -1,4 +1,4 @@
-var canJump = function (nums) {
+const canJump = function (nums) {
     let memo = [true];
     const canJump = function (k) {
         if (k === 0) return true;

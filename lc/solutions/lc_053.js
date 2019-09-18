@@ -1,4 +1,4 @@
-var maxSubArray = function (nums) {
+const maxSubArray = function (nums) {
     let dp = nums[0];
     let op = nums[0];
     for (let i = 1; i < nums.length; i++) {

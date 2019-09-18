@@ -1,4 +1,4 @@
-var nextPermutation = function(nums) {
+const nextPermutation = function(nums) {
     let maxIndex = -Infinity,
         changeIndex;
     //找到交换点
