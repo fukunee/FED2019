@@ -105,7 +105,7 @@
   font-style: normal;
 }
 html {
-  font-family: "myFont", "Bitstream Vera Serif", serif;
+  font-family: "ciclefina", "Bitstream Vera Serif", serif;
 }
 ```
 
@@ -116,8 +116,15 @@ html {
  - [Google Font](https://fonts.google.com/) 在线英文字体
  - [Google NOTO](https://www.google.com/get/noto/) 中文字体
  - [思源字体](http://jikasei.me/font/genjyuu/) 中文字体
- - [方正字体](https://www.foundertype.com/) 
- - 
+ - [方正字体](https://www.foundertype.com/) 中文字体
+ - [源字体](https://github.com/ButTaiwan?tab=repositories) 繁体字体
+ - [整合](http://www.tuyiyi.com/v/56117.html) 字体整合
+
+
+
+中文字体压缩：
+
+ - [FontMin](https://ecomfe.github.io/fontmin)
 
 
 
