@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "description": "Front End Docs",
   "main": "",
-  "scripts": {
-    "test": "jest"
-  },
+  "scripts": {},
   "keywords": [
     "FrontEnd"
   ],
   "author": "fukun",
   "license": "ISC",
-  "devDependencies": {
-    "jest": "^24.9.0"
-  }
+  "devDependencies": {}
 }
