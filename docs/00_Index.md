@@ -21,9 +21,6 @@
  - 类型转换
  - 变量与作用域
 
-
-
-
 ## 第4章 短语   |   Phrase
  - 操作符
 	 - 操作符顺序表 犀牛p66
@@ -46,9 +43,6 @@
 	 - 算数表达式
 	 - 关系表达式
 	 - 正则表达式
-	
-	
-
 
 ## 第5章 语法  |    Grammer
  - 控制语句
@@ -61,14 +55,11 @@
  - 异常处理语句
  - 其他语句
 
-
-
-
 ## 第6章 闭包/this/原型/类  |    Closure/this/Prototype/Class
+
 ## 第7章 异步与性能   |   Async & Performance
+
 ## 第8章  事件轮询  |    Event Loop
-
-
 
 
 
@@ -80,9 +71,6 @@
  - Navigator对象
  - Screen对象
  - History对象
-
-
-
 
 ## 第10章    文档对象DOM   |   DOM
  - 节点层次
@@ -100,7 +88,6 @@
 	 - 遍历和范围
 	 - 专有扩展
 
-
 ## 第11章 AJAX与XHR   |   AJAX&XHR
 
 ## 第12章 事件EVENT   |   Event Mechanism
@@ -112,7 +99,6 @@
 # 第五部分 CSS语言核心  |  CSS Core
 
 ##  第14章 选择器  |   Selector
-
 - 四大基本选择器
 - 属性选择器
 - 伪类选择器
@@ -120,10 +106,7 @@
 - before&after
 - 组合选择器
 
-
-
 ## 第15章 布局样式  |   Style of Layout
-
 - 盒模型
   - block、 inline 与 inline-block 
   - 常规流 Normal Flow
@@ -134,8 +117,6 @@
 - Grid布局
 - Multicol布局
 - Position
-
-
 
 ## 第16章 元素样式  |   Style of Elements
 
@@ -153,7 +134,6 @@
 ## 第19章 JS最佳实践  |  JS BestPractice
 
 ## 第20章 CSS最佳实践  |   CSS Best Practice
-
  - 布局
  - 组件
  - 动画
@@ -161,7 +141,6 @@
 ## 第21章  前端性能优化  |   Performance
 
 ## 第22章 自动化测试与构建   |   Engineering
-
  - 构建工具
      - 任务调度
          - npm scripts
@@ -185,9 +164,10 @@
      - expect
      - should
 
+
+
 # 第五部分 工具与框架  |  Tool Lib Framework
 ## 第23章 工具  |   Tool
-
 - 工具软件
   - Closure Compiler
   - Terser
@@ -196,7 +176,6 @@
   - Esprima
   - istanbul
   - Coveralls
-
 - 在线正则工具
   - debuggex
   - regex101
@@ -204,7 +183,6 @@
   - RegExr
 
 ## 第24章 类库   |   Lib
-
 - accounting.js
 - async
 - axios
@@ -232,6 +210,8 @@
  - React
  - Redux
  - RxJS
+
+
 
 # 附录  |  ANNEX
 

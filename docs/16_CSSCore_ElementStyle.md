@@ -2,16 +2,122 @@
 
 ## 第16章 元素样式  |   Style of Elements
 
- - 盒子样式
+ - 盒模型样式
+      - 盒尺寸
+     - 背景与边框
+     - overflow
  - 文本样式
 	 - 字体与文本
 	 - 安全字体
 	 - 长度单位
 - 列表样式
+- 表单样式
+- 表格样式
+- 替换元素
 
 ---
 
  ### 盒子样式
+
+#### 盒尺寸
+| CSS规则                        | 值          | 例                             | 备注                                                        |
+| ------------------------------ | ----------- | ------------------------------ | ----------------------------------------------------------- |
+| width | px    | width: 100px; | 绝对单位明确盒子的宽度              |
+|            | 50%    | width: 50%; | 相对盒子所在父盒子的content的宽度 |
+| height | px     | height: 100px; | 绝对单位明确盒子的高度                                 |
+|        | 50% | height: 50%; | 相对盒子所在父盒子的content的高度(若父盒无高度设置则无效) |
+| min-width | px | min-width: 100px; | 绝对单位明确盒子的宽度                        |
+|  | 50% | min-width: 50%; | 相对盒子所在父盒子的content的宽度     |
+| min-height | px      | min-height: 100px; | 绝对单位明确盒子的高度 |
+|      | 50% | min-height: 50%; | 相对盒子所在父盒子的content的高度(若父盒无高度设置则无效) |
+| max-width | px                                                        | max-width: 100px;  | 绝对单位明确盒子的宽度 |
+|                          | 50%                                                      | max-width: 50%; | 相对盒子所在父盒子的content的宽度 |
+| max-height | px | max-height: 100px; | 绝对单位明确盒子的高度 |
+| | 50% | max-height: 50%; | 相对盒子所在父盒子的content的高度(若父盒无高度设置则无效) |
+| padding | px                                                        | padding: 100px;     | 绝对单位明确盒子padding尺寸 |
+|  | 50%                                                  | padding: 50%;                 | 相对盒子所在父盒子的content的宽度设置padding |
+| margin | px                                                | margin: 100px;            | 绝对单位明确盒子margin尺寸 |
+|  | 50% | margin: 50%; | 相对盒子所在父盒子的content的宽度设置margin |
+
+
+#### 背景与边框
+| CSS规则                        | 值          | 例                             | 备注                                                        |
+| ------------------------------ | ----------- | ------------------------------ | ----------------------------------------------------------- |
+| background-attachment 背景附着 | scroll      | background-attachment: scroll; | 相对元素定位，不与文本同时滚动                              |
+| (背景跟着什么一起动)           | fixed       | background-attachment: fixed;  | 相对viewport定位，不与文本同时滚动                          |
+|                                | local       | background-attachment: local;  | 与文本同时滚动                                              |
+| background-clip 背景裁剪       | border-box  | background-clip: border-box;   | 以border外围进行裁剪                                        |
+|                                | padding-box | background-clip: padding-box;  | 以padding外围进行裁剪                                       |
+|                                | content-box | background-clip: content-box;  | 以内容外围进行裁剪                                          |
+|                                | text        | background-clip: text;         | 以文本边缘进行裁剪，只可与background-attachment: local;共用 |
+| background-color               | HSLA | background-color: hsla(188, 97%, 28%, .3); |                                                             |
+|                          | HSL                                                          | background-color: hsl(188, 97%, 28%);                   |                                                              |
+|                          | RGBA                                                         | background-color: rgba(18, 138, 125, .9);               |                                                              |
+|                          | RGB                                                          | background-color: rgb(18, 138, 125);                    |                                                              |
+|                          | RGB-Code                                                     | background-color: #02798b;                              |                                                              |
+|                          | transparent                                                  | background-color: transparent;                          | 透明                                                         |
+|                                | [<color>](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | color: black; |                                                             |
+| background-image | url() | background-image: url("../bg.png"); | 图片 |
+|                                | linear-gradient | background: linear-gradient(0deg, blue, green 40%, red); | 线性渐变 |
+|                                | radial-gradient | background: radial-gradient(circle at 50% 50%,#000 0%, #eee 50%); | 扩散渐变 |
+|                                | repeating-linear-gradient | background: repeating-linear-gradient(#000, #eee 50px); | 重复线性渐变 |
+|                                | repeating-radial-gradient | background: repeating-radial-gradient(#000, #eee 50px); | 重复扩散渐变 |
+|                                | conic-gradient                                               | background: conic-gradient(#000, #eee);                      | 锥形渐变                                                    |
+| background-position            | top/bottom/left/right/center | background-position: left bottom; | 左下 |
+|                                | 25% 75%                                                      | background-position: 25% 75%; | 左25% 顶75% |
+|                                | left 10px bottom20px | background-position: left 10px bottom 20px; | 左10px 底20px |
+| background-repeat | repeat-x | background-repeat: repeat-x; | 横向重复 |
+|                                | repeat-y | background-repeat: repeat-y; | 纵向重复 |
+|                                | repeat | background-repeat: repeat; | 双向重复 |
+|                                | space | background-repeat: space; | 等距重复 |
+|                                | round | background-repeat: round; | 中心双向重复 |
+|                                | no-repeat | background-repeat: no-repeat; | 不重复 |
+|                                | 两值 | background-repeat: repeat space; | 横向与纵向定义 |
+| background-size | cover | background-size: cover | 拉伸到填充整个空间 |
+|                                | contain | background-size: contain | 拉伸到图片完全展示 |
+|                                | 100px | background-size: 100px | 横向拉伸，保持原比例 |
+|                                | 50% auto                                                     | background-size: 50% auto | 双向拉伸 |
+| background | 组合模式                                                     | no-repeat center/80% url("../img/image.png") | attachment clip repeat position/size image, ... ,color;     |
+| border-width | px/em/rem | border-width: 2px; |  |
+| border-style | none | border-style: none; |  |
+|  | hidden | border-style: hidden; |  |
+|  | dotted | border-style: dotted; |  |
+|  | dashed | border-style: dashed; |  |
+|  | solid | border-style: solid; |  |
+|  | double | border-style: double; |  |
+|  | groove | border-style: groove; |  |
+|  | ridge | border-style: ridge; |  |
+|  | inset | border-style: inset; |  |
+|  | outset | border-style: outset; |  |
+|  | 两值 | border-style: dotted solid; | 上下 左右 |
+|  | 四值 | border-style: none solid dotted dashed; | 上右下左 |
+| border-color | ... | border-color: #eee; |  |
+| border | 组合模式 | border: 1px solid black; | width style color |
+| outline | 组合模式 | outline: 1px solid black; | width style color |
+| border-radius | px | border-radius: 10px; | 圆角本质上需要八个值 |
+|  | 10% | border-radius: 10%; |  |
+|  | 二值 | border-radius: 10px 5%; |  |
+|  | 四值 | border-radius: 10px 5%  20px 30px; |  |
+|  | 两侧修饰 | border-radius: 10px 5%  20px 30px/20px 25em 30px 35em; | 左上 右上 右下 左下 / 左上侧 右上侧 右下侧 左下侧 |
+
+#### overflow
+
+- overflow:非visible，可以将一个块级元素变为BFC。
+- 在可预测内容的场景下做好UI测试
+- 在不可预测内容的场景下尽量避免使用scroll
+
+| CSS规则  | 值      | 例                        | 备注   |
+| -------- | ------- | ------------------------- | ------ |
+| overflow | visible | overflow: visible;        | 默认值 |
+|          | hidden  | overflow: hidden;         |        |
+|          | scroll  | overflow: scroll;         |        |
+|          | auto    | overflow: auto;           |        |
+|          | 两值    | overflow: hidden visible; |        |
+
+----
+
+
+
 
  ### 文本样式
 
@@ -24,6 +130,7 @@
 |                          | RGBA                                                         | color: rgba(18, 138, 125, .9);                               |                                                              |
 |                          | RGB                                                          | color: rgb(18, 138, 125);                                    |                                                              |
 |                          | RGB-Code                                                     | color: #02798b;                                              |                                                              |
+|                          | transparent                                                  | color: transparent;                                          | 透明                                                         |
 |                          | [<color>](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | color: black;                                                |                                                              |
 | font-style 字体风格      | normal                                                       | font-size: normal;                                           | 正常字体                                                     |
 |                          | italic                                                       | font-size: italic;                                           | 斜体字体，若无斜体则模拟                                     |
@@ -139,6 +246,8 @@ html {
 |        | 1vh     | viewport长度的1%，相对长度          |
 |        | 50%     | 父盒子宽度的50%，相对长度           |
 
+---
+
 
 
 ### 列表样式
@@ -160,3 +269,44 @@ html {
 |                                                              | url()       | list-style-image: url('starsolid.gif');     |                |
 | list-style                                                   | 组合模式    | list-style: square url(example.png) inside; |                |
 
+---
+
+### 表单样式
+
+表单组件是很难做到跨平台一致性的。所以大部分UI框架都对下列组件进行一致性处理：
+
+- select
+- option
+- optgroup
+- datalist
+- progress
+- meter
+
+可以参考
+
+- Normalize.css项目
+- [创建自定义表单组件](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_build_custom_form_widgets)
+
+
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Images_media_form_elements
+
+---
+
+
+
+### 表格样式
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
+
+
+
+---
+
+
+
+### 替换元素
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Images_media_form_elements
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
