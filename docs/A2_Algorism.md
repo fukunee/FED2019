@@ -14,6 +14,20 @@
 
 ---
 
+
+
+### 递归算法
+
+涉及题目：lc_002
+
+
+
+
+
+---
+
+
+
 ### 链表
 
 涉及题目：lc_002
@@ -122,4 +136,94 @@
 
 涉及题目：
 
----
+- **树**是一种数据结构，它是由n>=1个有限结点组成一个具有层次关系的集合。没有父结点的结点称为根结点；每一个非根结点有且只有一个父结点；除了根结点外，每个子结点可以分为多个不相交的子树。
+
+- **二叉树**是每个结点最多有两个子树的树结构。通常子树被称作“左子树”（left subtree）和“右子树”（right subtree）。二叉树常被用于实现二叉搜索树和二叉堆。
+
+- **二叉搜索树**是具有下列性质的二叉树： 若它的左子树非空，则其所有结点的值均小于它的根结点的值； 若它的右子树非空，则其所有结点的值均大于它的根结点的值； 任意节点第左、右子树也是二叉搜索树。
+
+- 一些经典的二叉树问题：
+
+  - 二叉树翻转
+    
+    - 递归，用前序遍历对各节点的子节点进行翻转。
+    
+  - 二叉树前序遍历
+    - 递归，按照**根-左-右**的方式递归。
+    - 迭代，见代码。
+    ```javascript
+    var preorderTraversal = function(root){
+        let treeStack = []
+        let res = []
+        while(root || treeStack.length){
+            while(root){
+                res.push(root.val)
+                treeStack.push(root)
+                root = root.left
+            }
+            if(treeStack.length){
+                root = treeStack.pop()
+                root = root.right
+            }
+        }
+        return res
+    }
+    ```
+    
+  - 二叉树的中序遍历
+  
+    - 递归，按照**左-根-右**的方式递归。
+    - 迭代，见代码。
+    ```javascript
+    var inorderTraversal = function(root){
+        let treeStack = []
+        let res = []
+        while(root || treeStack.length){
+            while(root){
+                treeStack.push(root)
+                root = root.left
+            }
+            if(treeStack.length){
+                root = treeStack.pop()
+                res.push(root.val)
+                root = root.right
+            }
+        }
+        return res
+    }
+    ```
+    
+  - 二叉树的后序遍历
+  
+    - 递归，按照**左-右-根**的方式递归。
+    - 迭代，见代码。
+    ```javascript
+    var postorderTraversal = function(root) {
+        if(!root) return []
+        let treeStack = [root]
+        let res = []
+        let pre
+        while(treeStack.length){
+            root = treeStack[treeStack.length - 1]
+            if((!root.left && !root.right) || (pre &&(pre == root.left || pre == root.right))){
+                res.push(root.val)
+                treeStack.pop()
+                pre = root
+            }else{
+                if(root.right) treeStack.push(root.right)
+                if(root.left) treeStack.push(root.left)
+            }
+        }
+        return res
+    }
+    ```
+  
+  - 验证二叉搜索树
+    - 递归每个节点满足（左<=根）且（右>=根）则成立。
+  - 验证平衡二叉树 lc_110
+  - 二叉树的最近公共祖先
+  - 二叉搜索树的最近公共祖先
+
+
+
+https://www.jianshu.com/p/47e632985f11
