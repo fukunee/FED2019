@@ -96,9 +96,17 @@
 
 
 
+# 第四部分 HTML语言核心  |  HTML Core
+
+## 第14章 HTML头  |  HTML HEAD
+
+## 第15章 HTML元素  |  HTML Element
+
+
+
 # 第五部分 CSS语言核心  |  CSS Core
 
-##  第14章 选择器  |   Selector
+##  第16章 选择器  |   Selector
 - 四大基本选择器
 - 属性选择器
 - 伪类选择器
@@ -106,7 +114,7 @@
 - before&after
 - 组合选择器
 
-## 第15章 布局样式  |   Style of Layout
+## 第17章 布局样式  |   Style of Layout
 - 盒模型
   - block、 inline 与 inline-block 
   - 常规流 Normal Flow
@@ -118,29 +126,45 @@
 - Multicol布局
 - Position
 
-## 第16章 元素样式  |   Style of Elements
+## 第18章 元素样式  |   Style of Elements
 
-## 第17章 media查询与模块化  |   Media  Query & Modularization
+- 盒模型样式
+  - 盒尺寸
+  - 背景与边框
+  - overflow
+- 文本样式
+  - 字体与文本
+  - 安全字体
+  - WEB字体
+  - 长度单位
+- 列表样式
+- 表单样式
+- 表格样式
+  - 表格结构
+  - 表格样式
+- 替换元素
+
+## 第19章 media查询与模块化  |   Media  Query & Modularization
 
 
 
-# 第四部分 最佳实践  |  Best  Practice
+# 第六部分 最佳实践  |  Best  Practice
 
-## 第18章    编码最佳实践  |    Coding Guide
- - 编码规范
+## 第20章    编码最佳实践  |    Coding Guide
+ - JS编码规范
  - CSS命名规范BEM
  - metadata与SEO
 
-## 第19章 JS最佳实践  |  JS BestPractice
+## 第21章 JS最佳实践  |  JS BestPractice
 
-## 第20章 CSS最佳实践  |   CSS Best Practice
+## 第22章 CSS最佳实践  |   CSS Best Practice
  - 布局
  - 组件
  - 动画
 
-## 第21章  前端性能优化  |   Performance
+## 第23章  前端性能优化  |   Performance
 
-## 第22章 自动化测试与构建   |   Engineering
+## 第24章 自动化测试与构建   |   Engineering
  - 构建工具
      - 任务调度
          - npm scripts
@@ -166,8 +190,8 @@
 
 
 
-# 第五部分 工具与框架  |  Tool Lib Framework
-## 第23章 工具  |   Tool
+# 第七部分 工具与框架  |  Tool Lib Framework
+## 第25章 工具  |   Tool
 - 工具软件
   - Closure Compiler
   - Terser
@@ -182,7 +206,7 @@
   - regexper
   - RegExr
 
-## 第24章 类库   |   Lib
+## 第26章 类库   |   Lib
 - accounting.js
 - async
 - axios
@@ -205,7 +229,7 @@
 - xregexp.com
 - transform-www
 
-## 第25章 框架  |   Framework
+## 第27章 框架  |   Framework
  - Vue
  - React
  - Redux

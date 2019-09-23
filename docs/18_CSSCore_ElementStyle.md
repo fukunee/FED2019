@@ -9,10 +9,13 @@
  - 文本样式
 	 - 字体与文本
 	 - 安全字体
+	 - WEB字体
 	 - 长度单位
 - 列表样式
 - 表单样式
 - 表格样式
+    - 表格结构
+    - 表格样式
 - 替换元素
 
 ---
@@ -252,8 +255,6 @@ html {
 
 ### 列表样式
 
-
-
 | CSS规则                                                      | 值          | 例                                          | 备注           |
 | :----------------------------------------------------------- | :---------- | :------------------------------------------ | -------------- |
 | list-style-type 项标记                                       | disc        | list-style-type: disc;                      | 实心圆         |
@@ -275,21 +276,19 @@ html {
 
 表单组件是很难做到跨平台一致性的。所以大部分UI框架都对下列组件进行一致性处理：
 
-- select
-- option
-- optgroup
-- datalist
-- progress
-- meter
+- input select option optgroup datalist progress meter
 
-可以参考
+- 表单组件是替换元素，其盒模型并不同于常规元素。要想统一其盒模型的表现，需要用以下代码进行hack。
 
-- Normalize.css项目
-- [创建自定义表单组件](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_build_custom_form_widgets)
+```css
+input, textarea, select, button {
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+```
 
 
-
-https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Images_media_form_elements
 
 ---
 
@@ -297,7 +296,160 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Images_media_
 
 ### 表格样式
 
-https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
+ - 表格的组成为:
+    - caption 表名
+    - thead 表头
+    - tbody 表体
+    - tfoot 表尾
+    - tr 表行
+    - th 表头格
+    - td 单元格
+
+```html
+<table>
+    <caption>A summary of the UK's most famous punk bands</caption>
+    <colgroup>
+        <col>
+        <col span="2" class="batman">
+        <col span="1" class="flash">
+    </colgroup>
+    <thead>
+    <tr>
+        <th scope="col" colspan="2">Band</th>
+        <th scope="col">No. of Albums</th>
+        <th scope="col">Most famous song</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th rowspan="2" scope="row">Buzzcocks</th>
+        <td>1976</td>
+        <td>9</td>
+        <td>Ever fallen in love (with someone you shouldn't've)</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>6</td>
+        <td>London Calling</td>
+    </tr>
+    <tr>
+        <th scope="row">The Clash</th>
+        <td>1976</td>
+        <td>6</td>
+        <td>London Calling</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th scope="row" colspan="2">Total albums</th>
+        <td colspan="2">77</td>
+    </tr>
+    </tfoot>
+</table>
+```
+
+
+
+#### 表格结构
+
+| 标签     | 参数    | 值       | 例               | 备注                          |
+| -------- | :------ | :------- | :--------------- | ----------------------------- |
+| table    |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| caption  |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| thead    |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| tbody    |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| tfoot    |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| tr       |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| colgroup |         |          |                  | 不接受任何参数, 用CSS指定样式 |
+| th       | scope   | row      | scope=“row”      |                               |
+|          |         | col      | scope=“col”      |                               |
+|          |         | rowgroup | scope=“rowgroup” |                               |
+|          |         | colgroup | scope=“colgroup” |                               |
+|          |         | auto     | scope=“auto”     | 默认值                        |
+|          | rowspan | 2        | span=“2”         | 确定其占据的行数              |
+|          | colspan |          |                  | 确定其占据的列数              |
+| col      | span    | 1        | span=“1”         | 确定其占据的列数              |
+
+
+
+#### 表格样式
+
+##### 空隙与布局
+
+| CSS规则         | 值       | 例                        | 备注             |
+| :-------------- | :------- | :------------------------ | ---------------- |
+| table-layout    | auto     | table-layout: auto        | 根据内容计算列宽 |
+|                 | fixed    | table-layout: fixed       | 固定列宽         |
+| border-collapse | separate | border-collapse: separate | 不共享边框       |
+|                 | collapse | border-collapse: collapse | 共享边框         |
+
+```css
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+thead th:nth-child(1) {
+  width: 30%;
+}
+thead th:nth-child(2) {
+  width: 20%;
+}
+thead th:nth-child(3) {
+  width: 50%;
+}
+th, td {
+  padding: 20px;
+}
+```
+
+##### 字体
+
+```css
+/* 全局字体 */
+html { 
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+/* 表头字体 */
+thead th, tfoot th {
+  font-family: 'Rock Salt', cursive;
+}
+/* 表头字体 */
+th {
+  letter-spacing: 2px;
+}
+/* 单元格字体 */
+td {
+  letter-spacing: 1px;
+}
+/* 单元格字体 */
+tbody td {
+  text-align: center;
+}
+/* 表头字体 */
+tfoot th {
+  text-align: right;
+}
+```
+
+##### 斑马条纹
+
+```css
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+```
+
+##### 表名
+
+| CSS规则      | 值     | 例                   | 备注             |
+| :----------- | :----- | :------------------- | ---------------- |
+| caption-side | auto   | caption-side: top    | 表名显示在表上方 |
+|              | bottom | caption-side: bottom | 表名显示在表下方 |
 
 
 
@@ -307,6 +459,19 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_table
 
 ### 替换元素
 
-https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Images_media_form_elements
+- 图片、视频和iframe是替换元素
+- 替换元素着css无法影响其内部元素，只能操作其位置和大小。
+- 替换元素的尺寸不受flex与grid操作，若需要与flex与grid联动则需要一个父盒子，并设置替换元素的长宽100%。
 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
+| CSS规则         | 值           | 例                                                  | 备注                   |
+| :-------------- | :----------- | :-------------------------------------------------- | ---------------------- |
+| object-fit      | contain      | img{height:100%;width:100%;object-fit: contain;}    | 必须和长宽100%同时使用 |
+|                 | cover        | img{height:100%;width:100%;object-fit: cover;}      | 必须和长宽100%同时使用 |
+|                 | fill         | img{height:100%;width:100%;object-fit: fill;}       | 必须和长宽100%同时使用 |
+|                 | none         | img{height:100%;width:100%;object-fit: none;}       | 必须和长宽100%同时使用 |
+|                 | scale-down   | img{height:100%;width:100%;object-fit: scale-down;} | 必须和长宽100%同时使用 |
+| object-position | right top;   | object-position: right top;                         | 必须和长宽100%同时使用 |
+|                 | 50% 50%;     | object-position: 50% 50%;                           | 必须和长宽100%同时使用 |
+|                 | 250px 125px; | object-position: 250px 125px;                       | 必须和长宽100%同时使用 |
+
+
