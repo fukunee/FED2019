@@ -12,6 +12,7 @@ const sortedArrayToBST = function (nums) {
         root.right = doGrow(cut + 1, r);
         return root;
     };
+
     return doGrow(0, nums.length - 1);
 };
 
