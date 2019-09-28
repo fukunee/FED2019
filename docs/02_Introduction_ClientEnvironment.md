@@ -47,7 +47,7 @@
 #### HTTP
 ##### 工作流程
 三次握手，四次挥手
-[2](https://www.jianshu.com/p/6bf5e3922887)
+https://www.jianshu.com/p/6bf5e3922887
 
 ##### 特点
  - 请求和响应
@@ -56,10 +56,13 @@
  - 多种http方法
  - 持久连接
  - 管线化
-[1](http://www.52im.net/thread-1677-1-1.html)
+http://www.52im.net/thread-1677-1-1.html
 ##### 请求报文结构
 ##### 响应报文结构
 ##### 报文头
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
 ##### 状态码
 ##### 报文实体
 ##### 代理/缓存/网关/隧道/Agent代理
