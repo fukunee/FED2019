@@ -55,6 +55,10 @@
  - `position:absolute;` `float:left;` `display:inline-block/float-root/table-cells/table-captain;` `overflow:非visible;`都可以将一个块级元素变为BFC。
  - BFC的高度计算包含所有子元素，包括浮动元素。
  - BFC内的浮动元素不会影响BFC外的元素。
+ - 运用场景：
+    - 外边距塌陷
+    - 清除浮动
+    - 两列布局
 
 
 
