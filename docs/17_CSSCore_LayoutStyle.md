@@ -8,7 +8,7 @@
 	- 块格式化上下文BFC
 	 - float
  - 传统布局法
- - Flex布局
+ - FlexBox布局
  - Grid布局
  - Multicol布局
  - Position
@@ -188,7 +188,7 @@ float是用来在块元素中浮动图片。也多用来创建多列布局，但
 
 
 
-### Flex布局法
+### FlexBox布局法
 
 对比三种**单行横排**方式的区别：
 |method|子元素间空隙|子元素margin/padding/border影响父元素高度|
