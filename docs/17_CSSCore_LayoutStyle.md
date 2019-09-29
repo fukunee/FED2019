@@ -81,7 +81,109 @@ float是用来在块元素中浮动图片。也多用来创建多列布局，但
 
 ### 传统布局法
 
-https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
+- 两列布局
+
+  - float两列布局
+
+  ```html
+  <html lang="zh">
+  <head>
+      <title>Legacy float - Two Column Layout</title>
+  </head>
+  <body>
+  <div class="wrapper">
+      <div class="firstCol">
+          <h2>First column</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="secondCol">
+          <h2>Second column</h2>
+          <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices.</p>
+      </div>
+      <div class="clear"></div>
+  </div>
+  </body>
+  </html>
+  
+  <style>
+      body {
+          margin: 0;
+      }
+      .firstCol {
+          width: 49.5%;
+          float: left;
+          background: saddlebrown;
+          padding:10px;
+          box-sizing:border-box;
+      }
+      .secondCol {
+          width: 49.5%;
+          float: left;
+          background: blueviolet;
+          padding:10px;
+          box-sizing:border-box;
+      }
+      .clear {
+          clear: both;
+      }
+      .wrapper {
+          background: black;
+          margin: 0 auto;
+          padding: 10px;
+      }
+  </style>
+  ```
+
+  
+
+  - float两列布局升级版BFC
+
+  ```html
+  <html lang="zh">
+  <head>
+      <title>Legacy BFC - Two Column Layout</title>
+  </head>
+  <body>
+  <div class="wrapper">
+      <div class="firstCol">
+          <h2>First column</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="secondCol">
+          <h2>Second column</h2>
+          <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices.</p>
+      </div>
+      <div class="clear"></div>
+  </div>
+  </body>
+  </html>
+  
+  <style>
+      .firstCol {
+          float: left;
+          max-width: 200px;
+          background: saddlebrown;
+          padding:10px;
+          box-sizing:border-box;
+      }
+      .secondCol {
+          background: blueviolet;
+          padding:10px;
+          box-sizing:border-box;
+          overflow:auto;
+      }
+      .clear {
+          clear: both;
+      }
+      .wrapper {
+          background: black;
+          margin: 0 auto;
+          padding: 10px;
+      }
+  </style>
+  ```
+
+---
 
 
 
@@ -96,3 +198,17 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Meth
 |flex|N|Y|
 
 
+
+
+
+### Grid布局
+
+
+
+---
+
+
+
+### Multicol布局
+
+### Position
