@@ -232,7 +232,7 @@ Flex相关CSS规则：
 |                |                 | wrap           | flex-wrap: wrap;                | <img src="D:\FED2019\static\pic\1569920143233.png" alt="1569920143233" style="zoom:15%;" /> |
 |                |                 | wrap-reverse   | flex-wrap: wrap-reverse;        | <img src="D:\FED2019\static\pic\1569920163824.png" alt="1569920163824" style="zoom:15%;" /> |
 |                | flex-flow       | 组合模式       | flex-flow: row nowrap;          |                                                              |
-|                | aligh-items     | stretch        | aligh-items: stretch;           | <img src="D:\FED2019\static\pic\1569920740976.png" alt="1569920740976" style="zoom:25%;" /> |
+|                | align-items     | stretch        | aligh-items: stretch;           | <img src="D:\FED2019\static\pic\1569920740976.png" alt="1569920740976" style="zoom:25%;" /> |
 |                |                 | center         | aligh-items: center;            | <img src="D:\FED2019\static\pic\1569920753658.png" alt="1569920753658" style="zoom:25%;" /> |
 |                |                 | flex-start     | aligh-items: flex-start;        | <img src="D:\FED2019\static\pic\1569920772444.png" alt="1569920772444" style="zoom:25%;" /> |
 |                |                 | flex-end       | aligh-items: flex-end;          | <img src="D:\FED2019\static\pic\1569920785266.png" alt="1569920785266" style="zoom:25%;" /> |
