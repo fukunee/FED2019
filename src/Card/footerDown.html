@@ -1,0 +1,59 @@
+<html lang="zh">
+<head>
+    <title>Footer Down - Card</title>
+</head>
+<body>
+<div class="card">
+    <div class="content">
+        <p>This card doesn't have much content.</p>
+    </div>
+    <footer>Card footer</footer>
+</div>
+<div class="card">
+    <div class="content">
+        <p>This card has a lot more content which means that it defines the height of the container the cards are in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+    </div>
+    <footer>Card footer</footer>
+</div>
+</body>
+</html>
+
+<style>
+    ::-webkit-scrollbar {
+        /*隐藏滚轮*/
+        display: none;
+    }
+
+    * {
+        font-family: Consolas, serif;
+    }
+
+    .card {
+        width: 200px;
+        height: 230px;
+        background: lightskyblue;
+        border: 2px solid darkblue;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .content {
+        overflow-y: auto;
+        width: 100%;
+        padding: 0 7px;
+        color: darkblue;
+        box-sizing: border-box;
+    }
+
+    footer {
+        width: 100%;
+        text-align: center;
+        background: darkblue;
+        color: skyblue;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+</style>
