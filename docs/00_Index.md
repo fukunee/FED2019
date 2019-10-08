@@ -59,7 +59,7 @@
 
 ## 第7章 异步与性能   |   Async & Performance
 
-## 第8章  事件轮询  |    Event Loop
+## 第8章 事件轮询  |    Event Loop
 
 
 
