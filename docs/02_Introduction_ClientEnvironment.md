@@ -4,6 +4,7 @@
 
 - DNS/HTTP/OSI
 - Webkit运行机制 Webkit Mechanism
+  - https://developers.google.com/web/updates/2018/09/inside-browser-part1
   - [浏览器的工作原理](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
   - [Chrome浏览器概览](https://developers.google.com/web/updates/2018/09/inside-browser-part1)
   - [浏览时发生了什么？](https://developers.google.com/web/updates/2018/09/inside-browser-part2)
