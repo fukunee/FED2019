@@ -1,0 +1,61 @@
+<html lang="zh">
+<head>
+    <title>Grid Photo Board - Photo Board</title>
+</head>
+<body>
+<div class="gridBox">
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI2.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+    <div class="gridItem">
+        <img src="../../static/pic/OSI1.png" alt="OSI">
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    .gridBox {
+        background: cornflowerblue;
+        border-radius: 16px;
+        border:2px solid darkblue;
+        display: grid;
+        height:50%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows:1fr;
+        grid-gap: 6px 10px;
+    }
+
+    .gridItem {
+        margin: 10px;
+        border: 1px solid darkblue;
+        border-radius: 10px;
+        overflow: hidden;
+        background: antiquewhite;
+
+    }
+
+    img {
+        width: 100%;
+        height:100%;
+        object-fit: fill;
+    }
+</style>

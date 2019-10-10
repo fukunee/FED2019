@@ -467,7 +467,7 @@ tbody tr:nth-child(even) {
 | :-------------- | :----------- | :-------------------------------------------------- | ---------------------- |
 | object-fit      | contain      | img{height:100%;width:100%;object-fit: contain;}    | 必须和长宽100%同时使用 |
 |                 | cover        | img{height:100%;width:100%;object-fit: cover;}      | 必须和长宽100%同时使用 |
-|                 | fill         | img{height:100%;width:100%;object-fit: fill;}       | 必须和长宽100%同时使用 |
+|                 | fixll        | img{height:100%;width:100%;object-fit: fill;}       | 必须和长宽100%同时使用 |
 |                 | none         | img{height:100%;width:100%;object-fit: none;}       | 必须和长宽100%同时使用 |
 |                 | scale-down   | img{height:100%;width:100%;object-fit: scale-down;} | 必须和长宽100%同时使用 |
 | object-position | right top;   | object-position: right top;                         | 必须和长宽100%同时使用 |
