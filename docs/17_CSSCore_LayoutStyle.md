@@ -277,67 +277,149 @@ Grid模型：
 
 Grid规则：
 
-| 作用区域 | CSS规则             | 值           | 例                                                           | 备注                                                         |
-| -------- | ------------------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| GridBox  | display             | grid         | display: grid;                                               | 规定布局方式                                                 |
-|          | grid-template-col   | px           | grid-template-col: 200px 200px;                              |                                                              |
-|          |                     | fr           | grid-template-col: 1fr 1fr 1fr;                              |                                                              |
-|          |                     | repeat()     | grid-template-col: repeat(3,1fr);                            |                                                              |
-|          |                     | minmax()     | gird-template-col: minmax(100px, 1fr);                       |                                                              |
-|          |                     | auto repeat  | repeat(auto-fill, 200px);                                    |                                                              |
-|          |                     | 组合模式     | grid-template-col: 200px repeat(auto-fill, 200px) 300px;     |                                                              |
-|          | grid-template-row   | px           | grid-template-row: 200px 200px;                              |                                                              |
-|          |                     | fr           | grid-template-row: 1fr 1fr 1fr;                              |                                                              |
-|          |                     | repeat()     | grid-template-row: repeat(3,1fr);                            |                                                              |
-|          |                     | minmax()     | grid-template-row: minmax(100px,1fr);                        |                                                              |
-|          |                     | 组合模式     | grid-template-row: 200px repeat(3,1fr) 300px;                |                                                              |
-|          | grid-auto-flow      | row          | grid-auto-flow: row;                                         | <img src="D:\FED2019\static\pic\1570097757587.png" alt="1570097757587" style="zoom:50%;" /> |
-|          |                     | column       | grid-auto-flow: column;                                      | <img src="D:\FED2019\static\pic\1570097768145.png" alt="1570097768145" style="zoom:50%;" /> |
-|          |                     | dense        | grid-auto-flow: dense;                                       | <img src="D:\FED2019\static\pic\1570097782427.png" alt="1570097782427" style="zoom:50%;" /> |
-|          |                     | row dense    | grid-auto-flow: row dense;                                   | <img src="D:\FED2019\static\pic\1570097782427.png" alt="1570097782427" style="zoom:50%;" /> |
-|          |                     | column dense | grid-auto-flow: column dense;                                | <img src="D:\FED2019\static\pic\1570097831674.png" alt="1570097831674" style="zoom:50%;" /> |
-|          | grid                | 组合模式     | grid: auto-flow dense / 40px 40px 1fr;                       | <img src="D:\FED2019\static\pic\1570096406577.png" alt="1570096406577" style="zoom: 50%;" /> |
-|          |                     | 组合模式     | grid: auto-flow / 40px 40px 1fr;                             | <img src="D:\FED2019\static\pic\1570096431058.png" alt="1570096431058" style="zoom:50%;" /> |
-|          | grid-auto-columns   | auto         | grid-auto-columns: auto;                                     |                                                              |
-|          |                     | max-content  | grid-auto-columns: max-content;                              |                                                              |
-|          |                     | min-content  | grid-auto-columns: min-content;                              |                                                              |
-|          |                     | px           | grid-auto-columns: 200px;                                    |                                                              |
-|          |                     | fr           | grid-auto-columns: 1fr                                       |                                                              |
-|          |                     | 30%          | grid-auto-columns: 30%;                                      |                                                              |
-|          |                     | minmax()     | grid-auto-columns: minmax(10px, auto)                        |                                                              |
-|          |                     | 组合模式     | grid-auto-columns: 1fr 2fr;                                  |                                                              |
-|          | grid-auto-rows      | auto         | grid-auto-rows: auto;                                        |                                                              |
-|          |                     | max-content  | grid-auto-rows: max-content                                  |                                                              |
-|          |                     | min-content  | grid-auto-rows: min-content                                  |                                                              |
-|          |                     | px           | grid-auto-rows: 100px;                                       |                                                              |
-|          |                     | fr           | grid-auto-rows: 1fr;                                         |                                                              |
-|          |                     | 30%          | grid-auto-rows: 30%;                                         |                                                              |
-|          |                     | minmax()     | grid-auto-rows: minmax(10px, auto)                           |                                                              |
-|          |                     | 组合模式     | grid-auto-rows: 1fr 2fr;                                     | <img src="D:\FED2019\static\pic\1570097446451.png" alt="1570097446451" style="zoom:50%;" /> |
-|          | grid-row-gap        | px/em/vmin   | grid-row-gap: 0;                                             |                                                              |
-|          |                     | 10%          | grid-row-gap: 10%                                            |                                                              |
-|          | grid-column-gap     | px/em/vmin   | grid-column-gap: 0;                                          |                                                              |
-|          |                     | 10%          | grid-column-gap: 10%                                         |                                                              |
-|          | grid-gap            | 组合模式     | gap: 1em 0.5em;                                              |                                                              |
-|          | grid-template-areas | 组合模式     | grid-template-areas: "header header  header" "nav content sidebar" "nav content ad" "footer footer footer" | <img src="F:\Projects\FED2019\static\pic\1570764963203.png" alt="1570764963203" style="zoom:67%;" /> |
-| GridItem | grid-column-start   | num          | grid-column-start: 1;                                        |                                                              |
-|          |                     | span         | grid-column-start: span 3;                                   |                                                              |
-|          | grid-column-end     | num          | grid-column-end: 3;                                          |                                                              |
-|          |                     | span         | grid-column-end: span 3;                                     |                                                              |
-|          | grid-column         | 组合模式     | grid-column: 1 / span 2;                                     |                                                              |
-|          | gird-row-start      | num          | gird-row-start: 1;                                           |                                                              |
-|          |                     | span         | gird-row-start: span 3;                                      |                                                              |
-|          | grid-row-end        | num          | grid-row-end: 3;                                             |                                                              |
-|          |                     | span         | grid-row-end: span 3;                                        |                                                              |
-|          | grid-row            | 组合模式     | grid-row: 1 / span 2;                                        |                                                              |
-|          | grid-area           | 关键词       | header                                                       | 与外盒grid-template-areas对应                                |
-|          |                     | 组合模式     | grid-area: 1 / 1 / 4 / 2;                                    | 上左右下                                                     |
+| 作用区域 | CSS规则             | 值                                                           | 例                                                           | 备注                                                         |
+| -------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| GridBox  | display             | grid                                                         | display: grid;                                               | 规定布局方式                                                 |
+|          | grid-template-col   | px                                                           | grid-template-col: 200px 200px;                              |                                                              |
+|          | 规定精确**列宽**    | fr                                                           | grid-template-col: 1fr 1fr 1fr;                              |                                                              |
+|          |                     | repeat()                                                     | grid-template-col: repeat(3,1fr);                            |                                                              |
+|          |                     | minmax()                                                     | gird-template-col: minmax(100px, 1fr);                       |                                                              |
+|          |                     | auto repeat                                                  | repeat(auto-fill, 200px);                                    |                                                              |
+|          |                     | 组合模式                                                     | grid-template-col: 200px repeat(auto-fill, 200px) 300px;     |                                                              |
+|          | grid-template-row   | px                                                           | grid-template-row: 200px 200px;                              |                                                              |
+|          | 规定精确**行高**    | fr                                                           | grid-template-row: 1fr 1fr 1fr;                              |                                                              |
+|          |                     | repeat()                                                     | grid-template-row: repeat(3,1fr);                            |                                                              |
+|          |                     | minmax()                                                     | grid-template-row: minmax(100px,1fr);                        |                                                              |
+|          |                     | 组合模式                                                     | grid-template-row: 200px repeat(3,1fr) 300px;                |                                                              |
+|          | grid-auto-flow      | row                                                          | grid-auto-flow: row;                                         | <img src="D:\FED2019\static\pic\1570097757587.png" alt="1570097757587" style="zoom:50%;" /> |
+|          | 规定排列方向        | column                                                       | grid-auto-flow: column;                                      | <img src="D:\FED2019\static\pic\1570097768145.png" alt="1570097768145" style="zoom:50%;" /> |
+|          |                     | dense                                                        | grid-auto-flow: dense;                                       | <img src="D:\FED2019\static\pic\1570097782427.png" alt="1570097782427" style="zoom:50%;" /> |
+|          |                     | row dense                                                    | grid-auto-flow: row dense;                                   | <img src="D:\FED2019\static\pic\1570097782427.png" alt="1570097782427" style="zoom:50%;" /> |
+|          |                     | column dense                                                 | grid-auto-flow: column dense;                                | <img src="D:\FED2019\static\pic\1570097831674.png" alt="1570097831674" style="zoom:50%;" /> |
+|          | grid                | 组合模式                                                     | grid: auto-flow dense / 40px 40px 1fr;                       | <img src="D:\FED2019\static\pic\1570096406577.png" alt="1570096406577" style="zoom: 50%;" /> |
+|          |                     | 组合模式                                                     | grid: auto-flow / 40px 40px 1fr;                             | <img src="D:\FED2019\static\pic\1570096431058.png" alt="1570096431058" style="zoom:50%;" /> |
+|          | grid-auto-columns   | auto                                                         | grid-auto-columns: auto;                                     | 根据内容适应 |
+|          | 规定模糊列宽 | max-content                                                  | grid-auto-columns: max-content;                              | 内容最大值 |
+|          |                     | min-content                                                  | grid-auto-columns: min-content;                              | 内容最小值 |
+|          |                     | px                                                           | grid-auto-columns: 200px;                                    | 全为200px |
+|          |                     | fr                                                           | grid-auto-columns: 1fr                                       | 全为1fr |
+|          |                     | 30%                                                          | grid-auto-columns: 30%;                                      | 全为30% |
+|          |                     | minmax()                                                     | grid-auto-columns: minmax(10px, auto)                        | 全为minmax值 |
+|          |                     | 组合模式                                                     | grid-auto-columns: 1fr 2fr;                                  | 重复1fr 2fr |
+|          | grid-auto-rows      | auto                                                         | grid-auto-rows: auto;                                        | 根据内容适应 |
+|          | 规定模糊行高 | max-content                                                  | grid-auto-rows: max-content                                  | 内容最大值 |
+|          |                     | min-content                                                  | grid-auto-rows: min-content                                  | 内容最小值 |
+|          |                     | px                                                           | grid-auto-rows: 100px;                                       | 全为200px |
+|          |                     | fr                                                           | grid-auto-rows: 1fr;                                         | 全为1fr |
+|          |                     | 30%                                                          | grid-auto-rows: 30%;                                         | 全为30% |
+|          |                     | minmax()                                                     | grid-auto-rows: minmax(10px, auto)                           | 全为minmax值 |
+|          |                     | 组合模式                                                     | grid-auto-rows: 1fr 2fr;                                     | <img src="D:\FED2019\static\pic\1570097446451.png" alt="1570097446451" style="zoom:50%;" /> |
+|          | grid-row-gap        | px/em/vmin                                                   | grid-row-gap: 0;                                             |                                                              |
+|          |                     | 10%                                                          | grid-row-gap: 10%                                            |                                                              |
+|          | grid-column-gap     | px/em/vmin                                                   | grid-column-gap: 0;                                          |                                                              |
+|          |                     | 10%                                                          | grid-column-gap: 10%                                         |                                                              |
+|          | grid-gap            | 组合模式                                                     | gap: 1em 0.5em;                                              |                                                              |
+|          | grid-template-areas | 组合模式                                                     | grid-template-areas: "header header  header" "nav content sidebar" "nav content ad" "footer footer footer" | <img src="D:\FED2019\static\pic\1570764963203.png" alt="1570764963203" style="zoom:67%;" /> |
+|          | grid-template       | grid-template-rows / grid-template-columns                   | 100px 1fr / 50px 1fr                                         |                                                              |
+|          |                     | grid-template-areas grid-template-rows / grid-template-column | grid-template: <br/>"a a ." minmax(50px, auto)<br/>"a a ." 80px<br/>"b b c" auto / 2em 3em auto; | <img src="D:\FED2019\static\pic\1570835908834.png" alt="1570835908834" style="zoom:67%;" /> |
+| GridItem | grid-column-start   | num                                                          | grid-column-start: 1;                                        |                                                              |
+|          |                     | span                                                         | grid-column-start: span 3;                                   |                                                              |
+|          | grid-column-end     | num                                                          | grid-column-end: 3;                                          |                                                              |
+|          |                     | span                                                         | grid-column-end: span 3;                                     |                                                              |
+|          | grid-column         | 组合模式                                                     | grid-column: 1 / span 2;                                     |                                                              |
+|          | gird-row-start      | num                                                          | gird-row-start: 1;                                           |                                                              |
+|          |                     | span                                                         | gird-row-start: span 3;                                      |                                                              |
+|          | grid-row-end        | num                                                          | grid-row-end: 3;                                             |                                                              |
+|          |                     | span                                                         | grid-row-end: span 3;                                        |                                                              |
+|          | grid-row            | 组合模式                                                     | grid-row: 1 / span 2;                                        |                                                              |
+|          | grid-area           | 关键词                                                       | header                                                       | 与外盒grid-template-areas对应                                |
+|          |                     | 组合模式                                                     | grid-area: 1 / 1 / 4 / 2;                                    | 上左右下                                                     |
 
 grid布局模式：
 
-- Area方法，利用
+- Area拆分写法（用area明确每个item的位置）
 
-响应布局https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+  - 用grid-template-areas、grid-template-column、grid-template-row等与grid-area进行网格内的布局。
+
+  ```CSS
+  .GridBox{
+      grid-template-areas: "header header  header" 
+          				"nav content sidebar" 
+          				"nav content ad" 
+          				"footer footer footer"
+      grid-template-row: 1fr 1fr 1fr 1fr;
+      grid-template-column:1fr 1fr 1fr;
+  }
+  .GridItem1{
+      grid-area:"header"
+  }
+  .GridItem2{
+      grid-area:"content"
+  }
+  ...
+  ```
+
+  
+
+- Area组合写法（用area明确每个item的位置）
+
+  - 用grid-template与grid-area进行网格内布局。
+
+  ```css
+  .GridBox{
+  	grid-template:   "a a ." minmax(50px, auto)
+          			"a a ." 80px
+          			"b b c" auto / 2em 3em auto;
+  }
+  .GridItem1{
+      grid-area:"a"
+  }
+  .GridItem2{
+      grid-area:"b"
+  }
+  ...  
+  ```
+
+  
+
+- 自由写法（不确定item的数量与位置）
+
+  - 用grid-auto-rows与grid-template-column确定内部结构，用grid-auto-flow确定排列方式
+
+  ```css
+  .GridBox{
+      grid-auto-rows:1fr 2fr;
+      grid-template-column:1fr 1fr 1fr;
+      grid-auto-flow:column dense;
+  }
+  ```
+
+- 灵活12列布局法
+
+  ```css
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-gap: 20px;
+  }
+  .item1 {
+    grid-column: col-start / span 3;
+  }
+  .item2 {
+    grid-column: col-start 6 / span 4 ;
+    grid-row: 1 / 3;
+  }
+  .item3 {
+    grid-column: col-start 2 / span 2;
+    grid-row: 2;
+  }
+  .item4 {
+    grid-column: col-start 3 / -1;
+    grid-row: 3;
+  }
+  ```
+
+  
 
 ---
 
