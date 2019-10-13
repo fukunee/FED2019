@@ -215,7 +215,7 @@ float是用来在块元素中浮动图片。也多用来创建多列布局，但
 
 Flex模型图：
 
-### <img src="D:\FED2019\static\pic\flex_terms.png" alt="flex_terms.png"  />
+<img src="D:\FED2019\static\pic\flex_terms.png" alt="flex_terms.png"  />
 
 
 
