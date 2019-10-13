@@ -5,4 +5,4 @@
 var reverseBits = function(n) {
 
 };
-console.log(100);
+console.log(reverseBits(4294967293));//3221225471
