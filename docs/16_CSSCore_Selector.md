@@ -82,10 +82,10 @@ li[class^="a" i] {} /*大小写不敏感*/
 #### 伪类选择器
 
  - 交互伪类
-	 - focus
-	- target 
-	- active LVHA
-	 - hover LVHA
+	 - :focus
+	- :target 
+	- :active LVHA
+	 - :hover LVHA
 	 - a:link LVHA
 	 - a:visited LVHA
 	 - a:any-link
@@ -106,19 +106,25 @@ li[class^="a" i] {} /*大小写不敏感*/
 	 - radio:checked
 	 - radio:enabled
 	 - radio:disable
+	
  - DOM树伪类
-	 - root
-	 - scope
-	 - first-child
-	 - last-child
-	 - nth-child
-	 - nth-last-child
-	 - first-of-type
-	 - last-of-type
-	 - nth-of-type
-	 - nth-last-of-type
-	 - only-child
-	 - only-of-type
+	 - :root
+	 - :scope
+	 - :first-child
+	 - :last-child
+	 - :nth-child
+	 - :nth-last-child
+	 - :first-of-type
+	 - :last-of-type
+	 - :nth-of-type
+	 - :nth-last-of-type
+	 - :only-child
+	 - :only-of-type
+	
+ - 其他伪类
+	 - :empty
+	 - :not()
+	 - :lang
 
 #### 伪元素选择器
  - p::first-letter
