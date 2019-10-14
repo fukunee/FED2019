@@ -1,4 +1,33 @@
 # 第五部分 CSS语言核心  |  CSS Core
 
-## 第17章 media查询与模块化  |   Media  Query & Modularization
+## 第17章 At-Rules |  At-Rules
+
+- @media
+- @import
+- @supports
+- @document
+
+
+
+---
+
+#### @media
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+
+| features     | 值               | 例                             | 备注             |
+| ------------ | ---------------- | ------------------------------ | ---------------- |
+| aspect-ratio | min-aspect-ratio | @media (min-aspect-ratio: 8/5) | 最小视图宽高比   |
+|              | max-aspect-ratio | @media (max-aspect-ratio: 3/2) | 最大视图宽高比   |
+|              | aspect-ratio     | @media (aspect-ratio: 1/1)     | 确定视图宽高比   |
+| color        | min-color        | @media (min-color:8)           | 屏幕色位最小值   |
+|              | max-color        | @media (max-color:256)         | 屏幕色位最大值   |
+|              | color            | @media (color:8)               | 确定屏幕色位     |
+| grid         | 0                | @media (grid:0)                | 确定为Bitmap屏幕 |
+|              | 1                | @media (grid:1)                | 确定为网格屏幕   |
+| hover        | none             | @media (hover: none)           | 确定不可指针悬浮 |
+|              | hover            | @media (hover:hover)           | 确定可指针悬浮   |
+|              |                  |                                |                  |
+|              |                  |                                |                  |
+|              |                  |                                |                  |
 

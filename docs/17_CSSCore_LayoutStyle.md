@@ -76,7 +76,7 @@ display的值明确了一个元素的内外特性：
 #### 块格式化上下文BFC
  - BFC块级元素，**block formatting context**，就是**脱离常规流**的独立空间。BFC的解析依然是常规流。
  - 可以理解成：解析DOM树是一个函数，常规流解析过程中遇到了BFC，则调用相应BFC的解析函数（这个函数依然是使用常规流进行解析），并等待其返回。
- - `position:absolute;` `float:left;` `display:inline-block/float-root/table-cells/table-captain;` `overflow:非visible;`都可以将一个块级元素变为BFC。
+ - `position:absolute/relative/fixed/sticky;` `float:left;` `display:inline-block/float-root/table-cells/table-captain;` `overflow:非visible;`都可以将一个块级元素变为BFC。
  - BFC的高度计算包含所有子元素，包括浮动元素。
  - BFC内的浮动元素不会影响BFC外的元素。
  - 运用场景：
@@ -427,4 +427,32 @@ grid布局模式：
 
 ### Multicol布局
 
+Multicol规则如下：
+
+| 作用区域           | CSS规则      | 值           | 例                           | 备注                                                         |
+| ------------------ | ------------ | ------------ | ---------------------------- | ------------------------------------------------------------ |
+| Multicol Container | column-count | auto（默认） | column-count: auto;          | 列数自动                                                     |
+|                    |              | 3            | column-count: 3;             | 列数为3                                                      |
+|                    | column-width | px/em/vw     | column-width:200px;          | 列宽为200px，剩余空间均分                                    |
+|                    | column-gap   | px/em/vw     | column-gap: 40px;            | 列间距                                                       |
+|                    | column-rule  | 类似border   | column-rule: 6px solid blue; | 列间分割线                                                   |
+|                    | column-fill  | auto         | column-fill: auto;           | ![1571040932944](D:\FED2019\static\pic\1571040932944.png)    |
+|                    |              | balance      | column-fill: balance;        | ![1571040940233](D:\FED2019\static\pic\1571040940233.png)    |
+| Multicol Item      | column-span  | none         | column-span: none;           | <img src="D:\FED2019\static\pic\1571040670848.png" alt="1571040670848" style="zoom:80%;" /> |
+|                    |              | all          | column-span: all;            | ![1571040655364](D:\FED2019\static\pic\1571040655364.png)    |
+
+
+
 ### Position
+
+| CSS规则               | 值       | 例                  | 备注                       |
+| --------------------- | -------- | ------------------- | -------------------------- |
+| position              | static   | position: static;   | 默认行为                   |
+|                       | relative | position: relative; | 以static位置为基准进行移动 |
+|                       | absolute | position: absolute; | 以页面为基准进行移动       |
+|                       | fixed    | position:fixed;     | 以视窗为基准进行移动       |
+|                       | sticky   | position:sticky;    | 当元素离开视窗时发生移动   |
+| left/right/top/bottom | px       | left:10px;          |                            |
+|                       | %        | left: 10%;          |                            |
+| z-index               | 整数     | z-index:1           | 数字大的在上层             |
+
