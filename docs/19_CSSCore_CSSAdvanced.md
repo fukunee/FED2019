@@ -1,15 +1,18 @@
 # 第五部分 CSS语言核心  |  CSS Core
 
-## 第17章 At-Rules |  At-Rules
+## 第17章 CSS高级特性 |  CSS Advanced
 
-- @media
-- @import
-- @supports
-- @document
+- At-Rules
+  - @media
+  - @import
+  - @supports
+  - @charset
 
 
 
 ---
+
+### At-Rules
 
 #### @media
 
@@ -23,8 +26,8 @@ media特性：
 | color        | min-color          | @media (min-color:8){ ... }           | 屏幕色位最小值   |
 |              | max-color          | @media (max-color:256){ ... }         | 屏幕色位最大值   |
 |              | color              | @media (color:8){ ... }               | 确定屏幕色位     |
-| grid         | 0                  | @media (grid:0){ ... }                | 确定为Bitmap屏幕 |
-|              | 1                  | @media (grid:1){ ... }                | 确定为网格屏幕   |
+| grid         | 0                  | @media (grid:0){ ... }                | Bitmap位图屏幕   |
+|              | 1                  | @media (grid:1){ ... }                | Grid灰度图屏幕   |
 | hover        | none               | @media (hover: none){ ... }           | 确定不可指针悬浮 |
 |              | hover              | @media (hover:hover){ ... }           | 确定可指针悬浮   |
 | height       | min-height /px/rem | @media (min-height: 360px){ ... }     | 确定最小视图高度 |
@@ -39,7 +42,7 @@ media特性：
 |              | max-resolution/dpi | @media (max-resolution:150dpi)        | 最大分辨率       |
 |              | resolution/dpi     | @media (resolution:150dpi)            | 确定分辨率       |
 
-media组合关键词：and 、or 、not
+@media组合关键词：and 、or 、not
 
 ```css
 @media screen and (min-width: 900px) {
@@ -53,4 +56,48 @@ media组合关键词：and 、or 、not
 
 #### @import
 
-https://developer.mozilla.org/en-US/docs/Web/CSS/@import
+- @import规则要写在除@charset之外所有规则之前
+- 规则：@import url list-of-media-queries;
+
+```css
+@import 'custom.css';
+@import url("bluish.css")
+@import url('landscape.css') screen and (orientation:landscape);
+```
+
+
+
+#### @supports
+
+- @support用来检测浏览器是否支持某个规则
+- @support组合关键词：and 、or 、not
+
+```css
+@supports (display: grid) {
+  div {
+    display: grid;
+  }
+}
+@supports (display: table-cell) and (display: list-item) {}
+
+```
+
+
+
+#### @charset
+
+- @charset明确了CSS文档的编码
+- @charset规则必须置顶，写法上很要求很严格：
+
+```css
+@charset "UTF-8";       /* Set the encoding of the style sheet to Unicode UTF-8 */
+@charset 'iso-8859-15'; /* Invalid, wrong quoting style used */
+@charset  "UTF-8";      /* Invalid, more than one space */
+ @charset "UTF-8";      /* Invalid, there is a character (a space) before the at-rule */
+@charset UTF-8;         /* Invalid, without ' or ", the charset is not a CSS <string> */
+```
+
+- 在content规则中写特殊字符时，@charset将会很有用
+
+---
+
