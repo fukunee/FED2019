@@ -2,23 +2,69 @@
 
 ## 第15章 布局样式  |   Style of Layout
 
- - 盒模型
+ - 视觉格式化模型
+	
+	 - 盒模型与包含块
+		
+	- box-sizing
+	
 	- display
+	
 	- block、 inline 与 inline-block 
+	
 	- 常规流 Normal Flow
+	
 	- 块格式化上下文BFC
-	- float
- - 传统布局法
- - FlexBox布局
+	
+	- 浮动
+	
+ - 传统布局
+
+ - Flex布局
+
  - Grid布局
+
  - Multicol布局
+
  - Position
 
 ---
 
 
 
-### 盒模型
+### 视觉格式化模型
+
+#### 盒模型与包含块
+
+![1571105889262](D:\FED2019\static\pic\1571105889262.png)
+
+- 盒模型是描述元素在视图中占据空间尺寸的模型
+
+  - Content 内容区域
+  - Padding 内边距区域
+  - Border 边框区域
+  - Margin 外边距区域
+
+- 在常规流中，盒子的尺寸与位置受到其**包含块**的巨大影响。
+
+  - 根元素(<html>)所在的包含块是一个被称为初始包含块的矩形，是整个视图viewport，在分页媒体下的情况下是page area
+  - 若position: static/relative，包含块是它**最近块级祖先元素的内容区边缘**
+  - 若position: absolute，包含块是它**最近非static祖先元素内边距边缘**(fixed/absolute/relative/sticky)
+  - 若position: fixed，包含块与根元素相同
+
+  
+
+#### box-sizing
+
+
+
+| CSS规则    | 值                | 例                       | 备注                                                         |
+| ---------- | ----------------- | ------------------------ | ------------------------------------------------------------ |
+| box-sizing | content-box(默认) | box-sizing: content-box; | <img src="D:\FED2019\static\pic\1571106187389.png" alt="1571106187389" style="zoom: 33%;" /> |
+|            | border-box        | box-sizing: border-box;  | <img src="D:\FED2019\static\pic\1571106201783.png" alt="1571106201783" style="zoom: 33%;" /> |
+
+
+
 
 #### display
 
@@ -27,26 +73,26 @@ display的值明确了一个元素的内外特性：
 - 外特性明确了该元素在当前常规流中的布局要素
 - 内特性明确了该元素的尺寸与所有子元素的外特性
 
-| CSS规则 | 值           | 例                    | 备注                                                         |
-| ------- | ------------ | --------------------- | ------------------------------------------------------------ |
-| display | none         | displa: none;         | 移除该元素及其子元素[隐藏元素](https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link) |
-|         | contents     | displa: contents;     | 移除该元素保留其子元素[grid](https://blogs.igalia.com/mrego/2015/02/25/grid-auto-placement-is-ready/) |
-|         | block        | displa: block;        | 外特性：常规流的块级元素                                     |
-|         | inline       | displa: inline;       | 外特性：常规流的行内元素                                     |
-|         | table        | displa: table;        | 内特性：其内部呈表格布局                                     |
-|         | flex         | displa: flex;         | 内特性：其内部呈flex布局                                     |
-|         | grid         | displa: grid;         | 内特性：其内部呈grid布局                                     |
-|         | inline-block | displa: inline-block; | 外inline内block                                              |
-|         | inline-table | displa: inline-table; | 外inline内table                                              |
-|         | inline-flex  | displa: inline-flex;  | 外inline内flex                                               |
-|         | inline-grid  | displa: inline-grid;  | 外inline内grid                                               |
-|         | 组合模式     | displa: inline flex;  | 外inline内flex                                               |
+| CSS规则 | 值           | 例                     | 备注                                                         |
+| ------- | ------------ | ---------------------- | ------------------------------------------------------------ |
+| display | none         | display: none;         | 移除该元素及其子元素[隐藏元素](https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link) |
+|         | contents     | display: contents;     | 移除该元素保留其子元素[grid](https://blogs.igalia.com/mrego/2015/02/25/grid-auto-placement-is-ready/) |
+|         | block        | display: block;        | 外特性：常规流的块级元素                                     |
+|         | inline       | display: inline;       | 外特性：常规流的行内元素                                     |
+|         | table        | display: table;        | 内特性：其内部呈表格布局                                     |
+|         | flex         | display: flex;         | 内特性：其内部呈flex布局                                     |
+|         | grid         | display: grid;         | 内特性：其内部呈grid布局                                     |
+|         | inline-block | display: inline-block; | 外inline内block                                              |
+|         | inline-table | display: inline-table; | 外inline内table                                              |
+|         | inline-flex  | display: inline-flex;  | 外inline内flex                                               |
+|         | inline-grid  | display: inline-grid;  | 外inline内grid                                               |
+|         | 组合模式     | display: inline flex;  | 外inline内flex                                               |
 
 
 
 #### block、inline 与 inline-block 
  - block和inline是常规流中的布局部件。inline-block实际上是BFC，它的行为不在常规流中定义。
- - 三种基本元素__默认的高 度__都根据内容自适应。具有不同的特性：
+ - 三种基本元素__默认的高度__都根据内容自适应。具有不同的特性：
      - 可塑性：高度与宽度可以通过规则明确。无视装的东西。
      - 孤狼性：独占一行其他盒子无法和他同行。
      - 并肩性：可以与其他盒子分享同一行。
@@ -76,7 +122,7 @@ display的值明确了一个元素的内外特性：
 #### 块格式化上下文BFC
  - BFC块级元素，**block formatting context**，就是**脱离常规流**的独立空间。BFC的解析依然是常规流。
  - 可以理解成：解析DOM树是一个函数，常规流解析过程中遇到了BFC，则调用相应BFC的解析函数（这个函数依然是使用常规流进行解析），并等待其返回。
- - `position:absolute/relative/fixed/sticky;` `float:left;` `display:inline-block/float-root/table-cells/table-captain;` `overflow:非visible;`都可以将一个块级元素变为BFC。
+ - `position:absolute/fixed;` `float:left;` `display:inline-block/float-root/table-cells/table-captain;` `overflow:非visible;`都可以将一个块级元素变为BFC。
  - BFC的高度计算包含所有子元素，包括浮动元素。
  - BFC内的浮动元素不会影响BFC外的元素。
  - 运用场景：
@@ -103,7 +149,7 @@ float是用来在块元素中浮动图片。也多用来创建多列布局，但
 
 
 
-### 传统布局法
+### 传统布局
 
 - 两列布局
 
@@ -211,7 +257,7 @@ float是用来在块元素中浮动图片。也多用来创建多列布局，但
 
 
 
-### FlexBox布局法
+### Flex布局
 
 Flex模型图：
 
@@ -444,6 +490,8 @@ Multicol规则如下：
 
 
 ### Position
+
+- 使用position规则会导致元素堆叠（stacking context）现象，用z-index可以规定覆盖方式。
 
 | CSS规则               | 值       | 例                  | 备注                       |
 | --------------------- | -------- | ------------------- | -------------------------- |
