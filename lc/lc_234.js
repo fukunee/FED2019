@@ -25,6 +25,15 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var isPalindrome = function(head) {
+var isPalindrome = function (head) {
+    let tmp = [];
+    const helper = function (node) {
+        if (!node) return tmp.length === 0;
+        tmp[tmp.length - 1] ===
+    }
+    const helper2=function(node){
+        if(tmp[tmp.length-1]===node.val)tmp.pop();
 
+
+    }
 };

@@ -62,7 +62,7 @@ base标签明确了相对地址对应的baseURL。
 | 必要 |             | [其他字符集](https://www.iana.org/assignments/character-sets/character-sets.xhtml) | <meta charset="gb2312">                       |                                              |
 | 必要 | http-equiv  | content-security-policy                                      |                                               |                                              |
 | 必要 | （需要与http-header保持一致） | refresh                                                      | <meta http-equiv="refresh" content="0;url=" /> | 重定向与刷新 |
-| 必要 |             | content-type                                                 | <html lang="zh">                              | **！过时**，请在html中加入lang属性来取代它。 |
+| 必要 |  | content-type                                                 | <html lang="zh">                         | **！过时**，请在html中加入lang属性来取代它。 |
 | 必要 | | X-UA-Compatible | <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" > | 优先使用 IE 最新版本和 Chrome |
 | SEO | name: keywords | keywords | <meta name="keywords" content="kw1 kw2 kw3 kw4"> | 874字符以内 |
 | SEO | name: description | description | <meta name="description" content="my description"> | 160字符左右 |
@@ -79,7 +79,7 @@ base标签明确了相对地址对应的baseURL。
 | 响应 |  | maximum-scale(1) | <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> | 最大缩放比例 |
 | 响应 |  | minimum-scale(1) | <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> | 最小缩放比例 |
 | 响应 |  | user-scalable(yes/no) | <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> | 是否允许用户缩放 |
-| ios | name: apple-mobile-web-app-capable | yes | <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 启用 WebApp 全屏模式 --> | WebApp全屏模式 |
+| ios | name: apple-mobile-web-app-capable | yes | <meta name="apple-mobile-web-app-capable" content="yes" /> | 启用WebApp全屏模式 |
 | ios | name: apple-mobile-web-app-status-bar-style | 颜色关键词 | <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> | 隐藏状态栏/设置状态栏颜色 |
 | ios | name: apple-mobile-web-app-title |                                                              | <meta name="apple-mobile-web-app-title" content="标题"> | 添加到主屏后的标题 |
 | ios | name: telephone=no |  | <meta content="telephone=no" name="format-detection" /> | 忽略数字自动识别为电话号码 |

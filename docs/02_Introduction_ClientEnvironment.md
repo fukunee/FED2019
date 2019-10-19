@@ -25,7 +25,7 @@
 ### DNS/HTTP/OSI
 
 #### DNS
-域名的层级结构：三级域名.次级域名.顶级域名.根域名,即host.sld.tld.root:
+域名的层级结构: 三级域名.次级域名.顶级域名.根域名,即host.sld.tld.root:
  - .root 十三组根域名服务器 A.ROOT-SERVERS.NET~M.ROOT-SERVERS.NET。
  - .tld 十三组顶级域名服务器 A.GTLD-SERVERS.NET~M.GTLD-SERVERS.NET。
  - .sld 授权次级域名服务器 为各大域名代理商的服务器，如Tencent/AWS/ALIBABA等。
