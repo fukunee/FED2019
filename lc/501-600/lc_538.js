@@ -26,6 +26,15 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var convertBST = function(root) {
-
+var convertBST = function (root) {
+    let sum = 0;
+    const helper = function (node) {
+        if (!node) return;
+        if (node.right) helper(node.right);
+        node.val += sum;
+        sum = node.val;
+        if (node.left) helper(node.left);
+    }
+    helper(root);
+    return root;
 };
